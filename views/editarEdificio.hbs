@@ -1,0 +1,29 @@
+<div class="container-sm p-6">
+    <h1>Editando edificio {{edificio.descripcion}}</h1>
+    <form action="/editarEdificio/{{edificio.id}}" method="post">
+        <div class="mb-3">
+            <label for="denominacionEdificio" class="form-label">Denominación</label>
+            <input type="text" class="form-control" id="denominacionEdificio" name="denominacionEdificio" value="{{edificio.descripcion}}">
+            <div id="ayudaDenominacionEdificio" class="form-text">Ingrese una denominación para identificar al edificio
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="domicilioEdificio" class="form-label">Domicilio</label>
+            <input type="text" class="form-control" id="domicilioEdificio" name="domicilioEdificio" value="{{edificio.domicilio}}">
+            <div id="ayudaDomicilioEdificio" class="form-text">Ingrese calle y número</div>
+        </div>
+        <div class="mb-3">
+            <label for="localidadEdificio" class="form-label">Localidad</label>
+            <input type="text" class="form-control" id="localidadEdificio" name="localidadEdificio" value="{{edificio.localidad}}">
+            <div id="ayudaLocalidadEdificio" class="form-text">Ingrese la localidad del edificio</div>
+        </div>
+
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary m-2">Aceptar</button>
+        </div>
+
+        <div class="d-grid gap-2">
+            <a class="btn btn-primary m-2" href="/edificios">Volver</a>
+        </div>
+    </form>
+</div>

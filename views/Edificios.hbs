@@ -1,0 +1,50 @@
+<div class="container-sm text-center">
+    <h1>Edificios</h1>
+    <div class="row  border border-dark bg-primary text-white">
+        <div class="col-1">
+            <p class="container my-2">Id</p>
+        </div>
+        <div class="col-3">
+            <p class="container my-2">Denominación</p>
+        </div>
+        <div class="col-3">
+            <p class="container my-2">Domicilio</p>
+        </div>
+        <div class="col-3">
+            <p class="container my-2">Localidad</p>
+        </div>
+        <div class="col-2">
+            <p class="container my-2">Acción</p>
+        </div>
+    </div>
+    {{#if edificios}}
+    {{#each edificios}}
+    <div class="row  border border-dark bg-white text-dark">
+        <div class="col-1">
+            <p class="container my-2">{{id}}</p>
+        </div>
+        <div class="col-3">
+            <p class="container my-2">{{descripcion}}</p>
+        </div>
+        <div class="col-3">
+            <p class="container my-2">{{domicilio}}</p>
+        </div>
+        <div class="col-3">
+            <p class="container my-2">{{localidad}}</p>
+        </div>
+        <div class="col-2">
+            <a type="button" class="btn my-2 btn-primary btn-sm" aria-label="Left Align" href="/editarEdificio/{{id}}">
+                Editar
+            </a>
+        </div>
+    </div>
+    {{/each}}
+    {{/if}}
+
+    <a type="button" class="btn my-5 btn-primary" href="/agregarEdificio">
+        Agregar edificio
+    </a>
+    <a type="button" class="btn my-5 btn-primary" href="/">
+        Volver
+    </a>
+</div>

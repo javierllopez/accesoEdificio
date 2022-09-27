@@ -1,0 +1,28 @@
+<div class="container-sm text-center">
+    {{#if sinUsuario}}
+    <h1>Control de acceso</h1>
+    <div class="d-grid gap-2">
+        <a type="button" class="btn btn-primary" href="/login" role="button">Ingreso</a>
+        <a type="button" class="btn btn-primary" href="/crearCuenta" role="button">Crear cuenta</a>
+    </div>
+    {{/if}}
+    {{#if usuarioAcceso1}}
+    <h1>Control de acceso - Usuario: {{usuarioLogueado}} </h1>
+    <div class="d-grid gap-2">
+        <a type="button" class="btn btn-primary" href="/edificios" role="button">Edificios</a>
+        <a type="button" class="btn btn-primary" href="/usuarios" role="button">Usuarios</a>
+        <a type="button" class="btn btn-primary" href="/detalleDeMovimientos" role="button">Detalle de movimientos</a>
+        <a type="button" class="btn btn-primary" href="/PersonasEnElEdificio" role="button">Personas en el edificio</a>
+        <a type="button" class="btn btn-primary" href="/salir" role="button">Salir</a>
+    </div>
+    {{/if}}
+    {{#if usuarioAcceso2}}
+    <h1>Control de acceso - Usuario: {{usuarioLogueado}} </h1>
+    <div class="d-grid gap-2">
+        <a type="button" class="btn btn-primary" href="/registrarIngreso" role="button">Registrar ingreso</a>
+        <a type="button" class="btn btn-primary" href="/registrarSalida" role="button">Registrar salida</a>
+        <a type="button" class="btn btn-primary" href="/salir" role="button">Salir</a>
+    </div>
+</div>
+{{/if}}
+</div>

@@ -1,0 +1,65 @@
+<div class="container-sm text-center">
+    <h1>Usuarios registrados</h1>
+    <div class="row  border border-dark bg-primary text-white">
+        <div class="col-1">
+            <p class="container my-2">Nivel</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">Edificio</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">Usuario</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">Apellido</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">Nombre</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">Estado</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">Acción</p>
+        </div>
+    </div>
+    {{#if usuarios}}
+    {{#each usuarios}}
+    <div class="row  border border-dark bg-white text-dark">
+        <div class="col-1">
+            <p class="container my-2">Control</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">{{descripcion}}</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">{{username}}</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">{{apellido}}</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">{{nombres}}</p>
+        </div>
+        <div class="col">
+            <p class="container my-2" style="color: {{color estado}}">{{estado}}</p>
+        </div>
+        <div class="col">
+            <a type="button" class="btn my-2 btn-primary btn-sm" aria-label="Left Align" href="/editarUsuario/{{idUsuario}}">
+                Editar
+            </a>
+            <a type="button" class="btn my-2 btn-primary btn-sm" aria-label="Left Align" href="{{link estado}}/{{idUsuario}}">
+                {{boton estado}}
+            </a>
+        </div>
+    </div>
+    {{/each}}
+    {{/if}}
+
+    <a type="button" class="btn my-5 btn-primary" href="/agregarUsuario">
+        Agregar usuario
+    </a>
+    <a type="button" class="btn my-5 btn-primary" href="/">
+        Volver
+    </a>
+</div>

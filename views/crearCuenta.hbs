@@ -1,0 +1,42 @@
+<div class="container-sm p-6">
+    <h1>Crear usuario</h1>
+    <form action="/crearCuenta" method="post">
+        <div class="mb-3">
+            <label for="nombreUsuario" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario">
+            <div id="ayudaNombreUsuario" class="form-text">Ingrese su nombre completo</div>
+        </div>
+        <div class="mb-3">
+            <label for="apellidoUsuario" class="form-label">Apellido</label>
+            <input type="text" class="form-control" id="apellidoUsuario" name="apellidoUsuario">
+            <div id="apellidoUsuarioAyuda" class="form-text">Ingrese su apellido</div>
+        </div>
+        <div class="mb-3">
+            <label for="DNIUsuario" class="form-label">D.N.I.</label>
+            <input type="number" class="form-control" id="DNIUsuario" name="DNIUsuario">
+            <div id="DNIUsuarioAyuda" class="form-text">Ingrese su número de documento</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="username" class="form-label">Nombre de usuario</label>
+            <input type="text" class="form-control" id="username" name="username">
+            <div id="usernameAyuda" class="form-text">Ingrese un nombre de usuario</div>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Ingrese una clave</label>
+            <input type="password" class="form-control" id="password" name="password">
+            <div id="passwordAyuda" class="form-text">Ingrese una clave de al menos seis dígitos</div>
+        </div>
+        <div class="mb-3">
+            <label for="password2" class="form-label">Reingrese la clave</label>
+            <input type="password" class="form-control" id="password2" name="password2">
+        </div>
+        <p>Tipo de usuario Administrador</p>
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary">Agregar</button>
+        </div>
+        <div class="d-grid gap-2">
+            <a class="btn btn-primary" href="/">Volver</a>
+        </div>
+    </form>
+</div>
