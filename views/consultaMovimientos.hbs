@@ -1,0 +1,23 @@
+<div class="container-sm p-6">
+    <h1>Movimientos por fecha</h1>
+    <form action="/consultaMovimientos" method="post">
+        <div class="mb-3">
+            <label for="fecha" class="form-label">Fecha</label>
+            <input type="date" class="form-control" id="fecha" name="fecha">
+            <div id="usernameAyuda" class="form-text">Ingrese fecha a consultar</div>
+        </div>
+        <div class="mb-3">
+            <label for="edificio" class="form-label">Edificio</label>
+            <select class="form-select" aria-label="Default select example" name="edificio">
+                {{#each edificio}}
+                <option value="{{id}}">
+                    {{descripcion}}</option>
+                {{/each}}
+            </select>
+            <div id="ayudaEdificio" class="form-text">Seleccione el edificio a consultar</div>
+        </div>
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary">Consultar</button>
+        </div>
+    </form>
+</div>

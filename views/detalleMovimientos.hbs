@@ -1,0 +1,55 @@
+<div class="container-sm text-center">
+    <h1>Movimientos en edificio {{edificio}} el dia {{fecha}}</h1>
+    <div class="row  border border-dark bg-primary text-white">
+        <div class="col-1">
+            <p class="container my-2">Usuario</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">D.N.I.</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">Apellido</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">Nombre</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">Hora</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">Movimiento</p>
+        </div>
+    </div>
+    {{#if detalle}}
+    {{#each detalle}}
+    <div class="row  border border-dark bg-white text-dark">
+        <div class="col-1">
+            <p class="container my-2">{{idUsuario}}</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">{{idPersona}}</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">{{apellido}}</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">{{nombre}}</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">{{hora}}</p>
+        </div>
+        <div class="col">
+            <p class="container my-2" style="color: {{color actividad}}">{{actividad}}</p>
+        </div>
+    </div>
+    {{/each}}
+    {{#each acciones}}
+    <p>{{actividad}}s: {{Total}}</p>
+    {{/each}}
+    {{/if}}
+
+
+    <a type="button" class="btn my-5 btn-primary" href="/">
+        Volver
+    </a>
+</div>

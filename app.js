@@ -62,7 +62,7 @@ app.use('/deshabilitarUsuario',require('./routes/deshabilitarUsuario'));
 app.use('/editarUsuario',require('./routes/editarUsuario'));
 app.use('/ingreso',require('./routes/ingreso'));
 app.use('/salida',require('./routes/salida'));
-
+app.use('/consultaMovimientos',require('./routes/consultaMovimientos'));
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
