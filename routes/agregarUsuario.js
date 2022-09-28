@@ -61,7 +61,8 @@ router.post('/', accesoNivel1, async (req, res, next) => {
         username: req.body.username,
         acceso: 2,
         password: await cifrado.cifrar(req.body.password),
-        estado: 'Habilitado'
+        estado: 'Habilitado',
+        edificio: parseInt(req.body.edificioUsuario)
     }
 
     const nuevoEdificioUsuario = {

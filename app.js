@@ -60,6 +60,7 @@ app.use('/agregarUsuario',require('./routes/agregarUsuario'));
 app.use('/habilitarUsuario',require('./routes/habilitarUsuario'));
 app.use('/deshabilitarUsuario',require('./routes/deshabilitarUsuario'));
 app.use('/editarUsuario',require('./routes/editarUsuario'));
+app.use('/ingreso',require('./routes/ingreso'));
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
