@@ -1,0 +1,40 @@
+<div class="container-sm text-center">
+    <h1>Registrar salida</h1>
+    <div class="row  border border-dark bg-primary text-white">
+        <div class="col-2">
+            <p class="container my-2">D.N.I.</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">Apellido</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">Nombre</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">Acción</p>
+        </div>
+    </div>
+    {{#if personasEnEdificio}}
+    {{#each personasEnEdificio}}
+    <div class="row  border border-dark bg-white text-dark">
+        <div class="col-2">
+            <p class="container my-2">{{idPersona}}</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">{{apellido}}</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">{{nombres}}</p>
+        </div>
+        <div class="col">
+            <a type="button" class="btn my-2 btn-primary btn-sm" aria-label="Left Align" href="/salida/{{id}}">
+                Registrar Salida
+            </a>
+        </div>
+    </div>
+    {{/each}}
+    {{/if}}
+    <a type="button" class="btn my-5 btn-primary" href="/">
+        Volver
+    </a>
+</div>
