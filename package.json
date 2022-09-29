@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Sistema de control de ingreso a edificios",
   "main": "app.js",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "test": "nodemon test 3000",
     "start": "node app.js"
