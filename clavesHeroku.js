@@ -4,6 +4,6 @@ module.exports = {
         user: "tox0uxj4jzjk70zi",
         password: "vmxxr3bvtdsfx26f",
         database: "bcucn0985tatdoah",
-        acquireTimeout: 300
+        acquireTimeout: 10000
     }
 };

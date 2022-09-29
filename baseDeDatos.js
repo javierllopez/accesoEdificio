@@ -1,8 +1,8 @@
 const mysql = require('mysql');
-const {database} = require('./clavesHeroku');
+const {databaseHeroku} = require('./clavesHeroku');
 const { promisify} = require("util");
 
-const pool = mysql.createPool(database);
+const pool = mysql.createPool(databaseHeroku);
 
 pool.getConnection((err,connection) => {
     if (err){
