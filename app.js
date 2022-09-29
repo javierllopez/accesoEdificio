@@ -7,8 +7,8 @@ const flash = require("connect-flash");
 const session = require("express-session");
 const MySQLStore = require("express-mysql-session");
 const passport = require("passport");
-//const {database} = require('./claves');
-//const {databaseHeroku} = require('./clavesHeroku');
+const {database} = require('./claves');
+const {databaseHeroku} = require('./clavesHeroku');
 
 const app = express()
 
@@ -38,7 +38,7 @@ app.use(session({
     secret: "siekdkdpweo499585sddepwdlfkfk12l94fj",
     resave: false,
     saveUninitialized: false,
-    store: new MySQLStore(database)
+    store: new MySQLStore(databaseHeroku)
 
 }));
 app.use(flash());
