@@ -2,7 +2,7 @@ const mysql = require('mysql');
 const {database} = require('./claves');
 const { promisify} = require("util");
 
-const pool = mysql.createPool(database);
+const pool = mysql.createPool(process.env.JAWSDB_URL || database);
 
 pool.getConnection((err,connection) => {
     if (err){
