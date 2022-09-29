@@ -7,9 +7,16 @@ const flash = require("connect-flash");
 const session = require("express-session");
 const MySQLStore = require("express-mysql-session");
 const passport = require("passport");
-const {database} = require('./claves');
+//const {database} = require('./claves');
+//const {databaseHeroku} = require('./clavesHeroku');
 
 const app = express()
+
+if (process.env.PORT) {
+    const {database} = require('./clavesHeroku');    
+}else {
+    const {database} = require('./claves');    
+}
 
 
 //Settings
