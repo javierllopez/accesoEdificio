@@ -10,7 +10,7 @@ const passport = require("passport");
 const {database} = require('./claves');
 
 const app = express()
-const port = process.argv[2]    //Es el puerto ingresado en el script
+
 
 //Settings
 
@@ -72,5 +72,5 @@ process.argv.forEach(function (val, index, array)
 
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Aplicación corriendo en el puerto: ${port}`)
 })
