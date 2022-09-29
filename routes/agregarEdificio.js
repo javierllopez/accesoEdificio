@@ -9,6 +9,20 @@ router.get('/',accesoNivel1, async (req,res,next)=> {
     res.render('agregarEdificio');
 });
 router.post('/',accesoNivel1,async (req,res,next)=> {
+
+    if (req.body.denominacionEdificio == '') {
+        req.flash('error','Debe ingresar una denominación para el edificio');
+        return res.redirect('/');
+    }
+    if (req.body.domicilioEdificio == '') {
+        req.flash('error','Debe ingresar el domicilio del edificio');
+        return res.redirect('/');
+    }
+    if (req.body.localidadEdificio == '') {
+        req.flash('error','Debe ingresar la localidad del edificio');
+        return res.redirect('/');
+    }
+    
     const nuevoEdificio = {
         descripcion: req.body.denominacionEdificio,
         domicilio: req.body.domicilioEdificio,
