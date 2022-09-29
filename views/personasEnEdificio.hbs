@@ -1,0 +1,35 @@
+<div class="container-sm text-center">
+    <h1>Personas en el edificio {{edificio}}</h1>
+    <div class="row  border border-dark bg-primary text-white">
+        <div class="col">
+            <p class="container my-2">D.N.I.</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">Apellido</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">Nombre</p>
+        </div>
+    </div>
+    {{#if detalle}}
+    {{#each detalle}}
+    <div class="row  border border-dark bg-white text-dark">
+        <div class="col">
+            <p class="container my-2">{{idPersona}}</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">{{apellido}}</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">{{nombres}}</p>
+        </div>
+    </div>
+    {{/each}}
+    <p>Total de personas en este edificio: {{Total}}</p>
+    {{/if}}
+
+
+    <a type="button" class="btn my-5 btn-primary" href="/">
+        Volver
+    </a>
+</div>

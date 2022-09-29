@@ -1,0 +1,18 @@
+<div class="container-sm p-6">
+    <h1>Personas en un edificio</h1>
+    <form action="/personasEnEdificio" method="post">
+        <div class="mb-3">
+            <label for="edificio" class="form-label">Edificio</label>
+            <select class="form-select" aria-label="Default select example" name="edificio">
+                {{#each edificio}}
+                <option value="{{id}}">
+                    {{descripcion}}</option>
+                {{/each}}
+            </select>
+            <div id="ayudaEdificio" class="form-text">Seleccione el edificio a consultar</div>
+        </div>
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary">Consultar</button>
+        </div>
+    </form>
+</div>

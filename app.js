@@ -10,9 +10,10 @@ const passport = require("passport");
 const {database} = require('./claves');
 
 const app = express()
-const port = 3000
+const port = process.argv[2]    //Es el puerto ingresado en el script
 
 //Settings
+
 app.set('port',process.env.PORT||3000);
 app.set('views',path.join(__dirname,"views"));
 app.engine('.hbs',exphbs.engine(
@@ -63,6 +64,13 @@ app.use('/editarUsuario',require('./routes/editarUsuario'));
 app.use('/ingreso',require('./routes/ingreso'));
 app.use('/salida',require('./routes/salida'));
 app.use('/consultaMovimientos',require('./routes/consultaMovimientos'));
+app.use('/personasEnEdificio',require('./routes/personasEnEdificio'));
+
+// print process.argv 
+process.argv.forEach(function (val, index, array) 
+{ console.log(index + ': ' + val); });
+
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
