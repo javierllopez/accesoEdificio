@@ -66,10 +66,6 @@ app.use('/salida',require('./routes/salida'));
 app.use('/consultaMovimientos',require('./routes/consultaMovimientos'));
 app.use('/personasEnEdificio',require('./routes/personasEnEdificio'));
 
-// print process.argv 
-process.argv.forEach(function (val, index, array) 
-{ console.log(index + ': ' + val); });
-
 
 app.listen(port, () => {
   console.log(`Aplicación corriendo en el puerto: ${port}`)
