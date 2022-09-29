@@ -1,8 +1,8 @@
 const mysql = require('mysql');
-const {database} = require('./claves');
+const {database} = require('./clavesHeroku');
 const { promisify} = require("util");
 
-const pool = mysql.createPool(process.env.JAWSDB_URL || database);
+const pool = mysql.createPool(database);
 
 pool.getConnection((err,connection) => {
     if (err){
