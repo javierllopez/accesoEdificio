@@ -13,8 +13,16 @@ router.get('/', accesoNivel1, async (req, res, next) => {
 })
 
 router.post('/', accesoNivel1, async (req, res, next) => {
-    const fecha = new Date(req.body.fecha);
     
+    const fecha = new Date(req.body.fecha);
+    console.log(Date.parse(req.body.fecha));
+    if (isNaN(Date.parse(req.body.fecha))) {
+        req.flash('error','Debe ingresar una fecha válida');
+        return res.redirect('/consultaMovimientos')
+    }else {
+
+    }
+
     const esteEdificio = await db.query('SELECT descripcion FROM edificios WHERE id = ?', [req.body.edificio])
 
     const resultado = await db.query('SELECT * FROM registroactividad WHERE fecha = ? AND idEdificio = ? ORDER BY hora', [req.body.fecha, req.body.edificio]);
