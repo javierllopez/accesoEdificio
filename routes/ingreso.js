@@ -29,6 +29,16 @@ router.post('/', accesoNivel2, async (req, res, next) => {
         req.flash('error', 'Esta persona ya ingresó al edificio');
         return res.redirect('/ingreso');
     }
+
+    if (req.body.pisoDestino == 0 ) {
+        req.flash('error','Debe ingresar a qué piso va la persona');
+        return res.redirect('/ingreso');
+    }
+
+    if (req.body.deptoDestino == '') {
+        req.flash('error','Debe ingresar a qué departamento va la persona');
+        return res.redirect('/ingreso');
+    }
     const nuevoAcceso = {
         idEdificio: req.user.edificio,
         idUsuario: req.user.username,
@@ -37,14 +47,20 @@ router.post('/', accesoNivel2, async (req, res, next) => {
         nombre: req.body.nombresPersona,
         fecha: ahora.ahora(),
         hora: new Date().toLocaleTimeString(),
-        actividad: 'Ingreso'
+        actividad: 'Ingreso',
+        piso: req.body.pisoDestino.toString(),
+        depto: req.body.deptoDestino,
+        observaciones: req.body.observacionesDestino
     }
     console.log(await ahora);
     const nuevoAccesoEdificio = {
         idEdificio: req.user.edificio,
         idPersona: req.body.DNIPersona,
         apellido: req.body.apellidoPersona,
-        nombres: req.body.nombresPersona
+        nombres: req.body.nombresPersona,
+        piso: req.body.pisoDestino.toString(),
+        depto: req.body.deptoDestino,
+        observaciones: req.body.observacionesDestino
     }
 
     const regActividad = await db.query('INSERT INTO registroactividad SET ?', [nuevoAcceso]);

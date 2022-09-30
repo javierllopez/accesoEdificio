@@ -2,13 +2,22 @@
     <h1>Personas en el edificio {{edificio}}</h1>
     <div class="row  border border-dark bg-primary text-white">
         <div class="col">
-            <p class="container my-2">D.N.I.</p>
+            <p class="container my-1">D.N.I.</p>
         </div>
         <div class="col">
-            <p class="container my-2">Apellido</p>
+            <p class="container my-1">Apellido</p>
         </div>
         <div class="col">
-            <p class="container my-2">Nombre</p>
+            <p class="container my-1">Nombre</p>
+        </div>
+        <div class="col">
+            <p class="container my-1">Piso</p>
+        </div>
+        <div class="col">
+            <p class="container my-1">Depto</p>
+        </div>
+        <div class="col">
+            <p class="container my-1">Observaciones</p>
         </div>
     </div>
     {{#if detalle}}
@@ -22,6 +31,15 @@
         </div>
         <div class="col">
             <p class="container my-2">{{nombres}}</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">{{piso}}</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">{{depto}}</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">{{observaciones}}</p>
         </div>
     </div>
     {{/each}}
