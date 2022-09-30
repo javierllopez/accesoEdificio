@@ -1,7 +1,7 @@
 <div class="container-sm text-center">
     <h1>Movimientos en edificio {{edificio}} el dia {{fecha}}</h1>
     <div class="row  border border-dark bg-primary text-white">
-        <div class="col-1">
+        <div class="col-2">
             <p class="container my-2">Usuario</p>
         </div>
         <div class="col">
@@ -22,7 +22,7 @@
         <div class="col">
             <p class="container my-2">Depto</p>
         </div>
-        <div class="col">
+        <div class="col-3">
             <p class="container my-2">Obs.</p>
         </div>
         <div class="col">
@@ -32,7 +32,7 @@
     {{#if detalle}}
     {{#each detalle}}
     <div class="row  border border-dark bg-white text-dark">
-        <div class="col">
+        <div class="col-2">
             <p class="container my-1">{{idUsuario}}</p>
         </div>
         <div class="col">
@@ -53,7 +53,7 @@
         <div class="col">
             <p class="container my-1">{{depto}}</p>
         </div>
-        <div class="col">
+        <div class="col-3">
             <p class="container my-1">{{observaciones}}</p>
         </div>
         <div class="col">
