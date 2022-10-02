@@ -38,7 +38,7 @@ app.use(session({
     secret: "siekdkdpweo499585sddepwdlfkfk12l94fj",
     resave: false,
     saveUninitialized: false,
-    cookie: { maxAge: (1000*60) },
+    cookie: { maxAge: (1000*60*60) },
     store: new MySQLStore(databaseHeroku)
 
 }));
