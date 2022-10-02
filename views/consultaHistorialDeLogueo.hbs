@@ -1,0 +1,38 @@
+<div class="container-sm p-6">
+    <h1>Historial de logueo</h1>
+    <form action="/historialDeLogueo" method="post">
+        <div class="mb-3">
+            <label for="edificio" class="form-label">Usuario</label>
+            <select class="form-select" aria-label="Default select example" name="usuario">
+                {{#each usuarios}}
+                <option value="{{idUsuario}}">
+                    {{idUsuario}}</option>
+                {{/each}}
+            </select>
+            <div id="ayudaEdificio" class="form-text">Seleccione el usuario que desea controlar</div>
+        </div>
+        <div class="row my-1">
+            <div class="col">
+                <div class="mb-3">
+                    <label for="fechaDesde" class="form-label">Desde fecha</label>
+                    <input type="date" class="form-control" id="fechaDesde" name="fechaDesde">
+                    <div id="ayudaFechaDesde" class="form-text">Desde qué fecha desea consultar</div>
+                </div>
+            </div>
+            <div class="class col">
+                <div class="mb-3">
+                    <label for="fechaHasta" class="form-label">Hasta fecha</label>
+                    <input type="date" class="form-control" id="fechaHasta" name="fechaHasta">
+                    <div id="ayudaFechaHasta" class="form-text">Hasta qué fecha desea consultar</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary" onclick="prenderRuedita()">Consultar</button>
+        </div>
+        <div class="d-grid gap-2">
+            <a class="btn btn-primary m-2" href="/" onclick="prenderRuedita()">Volver</a>
+        </div>
+    </form>
+</div>

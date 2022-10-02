@@ -1,0 +1,42 @@
+<div class="container-sm text-center">
+    <h2>Historial del usuario {{username}} entre los dias {{fechaDesde}} y {{fechaHasta}}</h2>
+    <div class="row  border border-dark bg-primary text-white">
+        <div class="col">
+            <p class="container my-2">Fecha</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">Hora</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">Edificio</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">Actividad</p>
+        </div>
+
+    </div>
+    {{#if detalle}}
+    {{#each detalle}}
+    <div class="row  border border-dark bg-white text-dark">
+        <div class="col">
+            <p class="container my-1">{{fechaNormalizada fecha}}</p>
+        </div>
+        <div class="col">
+            <p class="container my-1">{{hora}}</p>
+        </div>
+        <div class="col">
+            <p class="container my-1">{{descripcion}}</p>
+        </div>
+        <div class="col">
+            <p class="container my-1">{{actividad}}</p>
+        </div>
+    </div>
+    {{/each}}
+
+    {{/if}}
+
+
+    <a type="button" class="btn my-5 btn-primary" href="/" onclick="prenderRuedita()">
+        Volver
+    </a>
+</div>

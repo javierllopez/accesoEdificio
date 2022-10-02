@@ -11,7 +11,7 @@ router.get('/', logueado, async (req, res) => {
     username: req.user.username,
     edificio: req.user.edificio,
     fecha: ahora.ahora(),
-    hora: new Date().getTime().toString(),
+    hora: new Date().toLocaleTimeString(),
     actividad: 'Logout'
   }
   await db.query('INSERT INTO historiallogueo SET ?', [registro]);

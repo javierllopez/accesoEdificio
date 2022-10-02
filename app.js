@@ -73,6 +73,7 @@ app.use('/ingreso',require('./routes/ingreso'));
 app.use('/salida',require('./routes/salida'));
 app.use('/consultaMovimientos',require('./routes/consultaMovimientos'));
 app.use('/personasEnEdificio',require('./routes/personasEnEdificio'));
+app.use('/historialDeLogueo', require('./routes/historialDeLogueo'));
 
 
 app.listen(port, () => {
