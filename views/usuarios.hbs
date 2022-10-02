@@ -45,10 +45,10 @@
             <p class="container my-2" style="color: {{color estado}}">{{estado}}</p>
         </div>
         <div class="col">
-            <a type="button" class="btn my-2 btn-primary btn-sm" aria-label="Left Align" href="/editarUsuario/{{idUsuario}}">
+            <a type="button" class="btn my-2 btn-primary btn-sm" aria-label="Left Align" href="/editarUsuario/{{idUsuario}}" onclick="prenderRuedita()">
                 Editar
             </a>
-            <a type="button" class="btn my-2 btn-primary btn-sm" aria-label="Left Align" href="{{link estado}}/{{idUsuario}}">
+            <a type="button" class="btn my-2 btn-primary btn-sm" aria-label="Left Align" href="{{link estado}}/{{idUsuario}}" onclick="prenderRuedita()">
                 {{boton estado}}
             </a>
         </div>
@@ -56,10 +56,10 @@
     {{/each}}
     {{/if}}
 
-    <a type="button" class="btn my-5 btn-primary" href="/agregarUsuario">
+    <a type="button" class="btn my-5 btn-primary" href="/agregarUsuario" onclick="prenderRuedita()">
         Agregar usuario
     </a>
-    <a type="button" class="btn my-5 btn-primary" href="/">
+    <a type="button" class="btn my-5 btn-primary" href="/" onclick="prenderRuedita()">
         Volver
     </a>
 </div>

@@ -19,10 +19,20 @@
         </div>
 
         <div class="d-grid gap-2">
-            <button type="submit" class="btn btn-primary m-2">Agregar edificio</button>
+            <button type="submit" class="btn btn-primary m-2" onclick="prenderRuedita()">Agregar edificio</button>
         </div>
         <div class="d-grid gap-2">
-            <a class="btn btn-primary m-2" href="/edificios">Volver</a>
+            <a class="btn btn-primary m-2" href="/edificios" onclick="prenderRuedita()">Volver</a>
         </div>
     </form>
+    <div id="ruedita" style="visibility:hidden" class="d-flex justify-content-center">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only"></span>
+        </div>
+    </div>
 </div>
+{{!-- <script>
+    function prenderRuedita() {
+        document.getElementById("ruedita").style.visibility = "visible";
+    }
+</script> --}}

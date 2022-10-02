@@ -33,7 +33,7 @@
             <p class="container my-2">{{localidad}}</p>
         </div>
         <div class="col-2">
-            <a type="button" class="btn my-2 btn-primary btn-sm" aria-label="Left Align" href="/editarEdificio/{{id}}">
+            <a type="button" class="btn my-2 btn-primary btn-sm" aria-label="Left Align" href="/editarEdificio/{{id}}" onclick="prenderRuedita()">
                 Editar
             </a>
         </div>
@@ -41,10 +41,10 @@
     {{/each}}
     {{/if}}
 
-    <a type="button" class="btn my-5 btn-primary" href="/agregarEdificio">
+    <a type="button" class="btn my-5 btn-primary" href="/agregarEdificio" onclick="prenderRuedita()">
         Agregar edificio
     </a>
-    <a type="button" class="btn my-5 btn-primary" href="/">
+    <a type="button" class="btn my-5 btn-primary" href="/" onclick="prenderRuedita()">
         Volver
     </a>
 </div>
