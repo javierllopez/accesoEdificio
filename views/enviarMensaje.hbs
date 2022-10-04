@@ -1,0 +1,42 @@
+<div class="container-sm p-6">
+    <h1>Nuevo Mensaje</h1>
+    <form action="/enviarMensaje" method="post">
+        <div class="mb-3">
+            <label for="destinatario" class="form-label">Destinatario</label>
+            <select class="form-select" aria-label="Default select example" name="destinatario">
+                {{#each destinatarios}}
+                <option value="{{destinatario}}">
+                    {{destinatario}}</option>
+                {{/each}}
+            </select>
+            <div id="ayudaDestinatario" class="form-text">Seleccione destinatario del mensaje</div>
+        </div>
+        <div class="mb-3">
+            <label for="asuntoMensaje" class="form-label">Asunto</label>
+            <input type="text" class="form-control" id="asuntoMensaje" name="asuntoMensaje">
+            <div id="ayudaAsuntoMensaje" class="form-text">Ingrese el asunto del mensaje</div>
+        </div>
+        <div class="mb-3">
+            <label for="localidadEdificio" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="mensaje" name="mensaje" rows="3"></textarea>
+            <div id="ayudaMensaje" class="form-text">Ingrese el mensaje</div>
+        </div>
+
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary m-2" onclick="prenderRuedita()">Enviar</button>
+        </div>
+        <div class="d-grid gap-2">
+            <a class="btn btn-primary m-2" href="/" onclick="prenderRuedita()">Volver</a>
+        </div>
+    </form>
+    <div id="ruedita" style="visibility:hidden" class="d-flex justify-content-center">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only"></span>
+        </div>
+    </div>
+</div>
+{{!-- <script>
+    function prenderRuedita() {
+        document.getElementById("ruedita").style.visibility = "visible";
+    }
+</script> --}}

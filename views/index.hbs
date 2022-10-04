@@ -3,27 +3,46 @@
     <h1>Control de acceso</h1>
     <div class="d-grid gap-2">
         <a type="button" class="btn btn-primary" href="/login" role="button" onclick="prenderRuedita()">Ingreso</a>
-        <a type="button" class="btn btn-primary" href="/crearCuenta" role="button" onclick="prenderRuedita()">Crear cuenta</a>
+        <a type="button" class="btn btn-primary" href="/crearCuenta" role="button" onclick="prenderRuedita()">Crear
+            cuenta</a>
     </div>
     {{/if}}
     {{#if usuarioAcceso1}}
     <h1>Control de acceso - Usuario: {{usuarioLogueado}} </h1>
     <div class="d-grid gap-2">
-        <a type="button" class="btn btn-primary" href="/edificios" role="button" onclick="prenderRuedita()">Edificios</a>
+        <a type="button" class="btn btn-primary" href="/edificios" role="button"
+            onclick="prenderRuedita()">Edificios</a>
         <a type="button" class="btn btn-primary" href="/usuarios" role="button" onclick="prenderRuedita()">Usuarios</a>
-        <a type="button" class="btn btn-primary" href="/consultaMovimientos" role="button" onclick="prenderRuedita()">Detalle de movimientos</a>
-        <a type="button" class="btn btn-primary" href="/personasEnEdificio" role="button" onclick="prenderRuedita()">Personas en el edificio</a>
-        <a type="button" class="btn btn-primary" href="/historialDeLogueo" role="button" onclick="prenderRuedita()">Historial de logueo de usuarios</a>
-        <a type="button" class="btn btn-primary" href="/salir" role="button" onclick="prenderRuedita()">Salir</a>
+        <a type="button" class="btn btn-primary" href="/consultaMovimientos" role="button"
+            onclick="prenderRuedita()">Detalle de movimientos</a>
+        <a type="button" class="btn btn-primary" href="/personasEnEdificio" role="button"
+            onclick="prenderRuedita()">Personas en el edificio</a>
+        <a type="button" class="btn btn-primary" href="/historialDeLogueo" role="button"
+            onclick="prenderRuedita()">Historial de logueo de usuarios</a>
+        <a type="button" class="btn btn-primary mt-2" href="/enviarMensaje" role="button"
+            onclick="prenderRuedita()">Enviar mensaje</a>
+        <a type="button" class="btn btn-primary" href="/consultarMensajesEnviados" role="button"
+            onclick="prenderRuedita()">Ver mensajes enviados</a>
+        <a type="button" class="btn btn-primary" href="/consultarMensajesRecibidos" role="button"
+            onclick="prenderRuedita()">Ver mensajes recibidos</a>
+        <a type="button" class="btn btn-primary my-2" href="/salir" role="button" onclick="prenderRuedita()">Salir</a>
 
     </div>
     {{/if}}
     {{#if usuarioAcceso2}}
     <h1>Control de acceso - Usuario: {{usuarioLogueado}} </h1>
     <div class="d-grid gap-2">
-        <a type="button" class="btn btn-primary" href="/ingreso" role="button" onclick="prenderRuedita()">Registrar ingreso</a>
-        <a type="button" class="btn btn-primary" href="/salida" role="button" onclick="prenderRuedita()">Registrar salida</a>
-        <a type="button" class="btn btn-primary" href="/salir" role="button" onclick="prenderRuedita()">Salir</a>
+        <a type="button" class="btn btn-primary" href="/ingreso" role="button" onclick="prenderRuedita()">Registrar
+            ingreso</a>
+        <a type="button" class="btn btn-primary" href="/salida" role="button" onclick="prenderRuedita()">Registrar
+            salida</a>
+        <a type="button" class="btn btn-primary mt-2" href="/enviarMensaje" role="button"
+            onclick="prenderRuedita()">Enviar mensaje</a>
+        <a type="button" class="btn btn-primary" href="/consultarMensajesEnviados" role="button"
+            onclick="prenderRuedita()">Ver mensajes enviados</a>
+        <a type="button" class="btn btn-primary" href="/consultarMensajesRecibidos" role="button"
+            onclick="prenderRuedita()">Ver mensajes recibidos</a>
+        <a type="button" class="btn btn-primary mt-2" href="/salir" role="button" onclick="prenderRuedita()">Salir</a>
     </div>
 </div>
 {{/if}}

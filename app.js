@@ -10,6 +10,7 @@ const passport = require("passport");
 const {database} = require('./claves');
 const {databaseHeroku} = require('./clavesHeroku');
 
+
 const app = express()
 
 if (process.env.PORT) {
@@ -74,6 +75,11 @@ app.use('/salida',require('./routes/salida'));
 app.use('/consultaMovimientos',require('./routes/consultaMovimientos'));
 app.use('/personasEnEdificio',require('./routes/personasEnEdificio'));
 app.use('/historialDeLogueo', require('./routes/historialDeLogueo'));
+app.use('/enviarMensaje',require('./routes/enviarMensaje'));
+app.use('/consultarMensajesEnviados',require('./routes/consultarMensajesEnviados'));
+app.use('/consultarMensajesRecibidos',require('./routes/consultarMensajesRecibidos'));
+app.use('/leerMensajeRecibido',require('./routes/leerMensajeRecibido'));
+app.use('/leerMensajeEnviado',require('./routes/leerMensajeEnviado'));
 
 
 app.listen(port, () => {

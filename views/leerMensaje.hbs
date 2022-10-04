@@ -1,0 +1,36 @@
+<div class="container-sm p-6">
+    <h1>Mensaje</h1>
+    {{#with miMensaje}}
+    <form>
+        <div class="mb-3">
+            <label for="asunto" class="form-label">Asunto</label>
+            <input type="text" class="form-control" id="asunto" name="asunto" value="{{asunto}}" readonly>
+        </div>
+        <div class="mb-3">
+            <label for="remitente" class="form-label">Remitente</label>
+            <input type="text" class="form-control" id="remitente" name="remitente" value="{{remitente}}" readonly>
+        </div>
+        <div class="mb-3">
+            <label for="destinatario" class="form-label">Destinatario</label>
+            <input type="text" class="form-control" id="destinatario" name="destinatario" value="{{destinatario}}"
+                readonly>
+        </div>
+        <div class="mb-3">
+            <label for="localidadEdificio" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="mensaje" name="mensaje" rows="3" readonly>{{mensaje}}</textarea>
+        </div>
+        {{/with}}
+
+        {{#if recibido}}
+        <div class="d-grid gap-2">
+            <a class="btn btn-primary m-2" href="/leerMensajeRecibido/mensajeLeido/{{#with miMensaje}}{{id}}{{/with}}"
+                onclick="prenderRuedita()">Volver</a>
+        </div>
+        {{else}}
+        <div class="d-grid gap-2">
+            <a class="btn btn-primary m-2" href="/" onclick="prenderRuedita()">Volver</a>
+        </div>
+        {{/if}}
+    </form>
+
+</div>

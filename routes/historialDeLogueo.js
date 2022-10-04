@@ -17,9 +17,17 @@ router.get('/', accesoNivel1, async (req, res, next) => {
 router.post('/', async (req, res, next) => {
 
 
-    const consultaSQL = 'SELECT username as username, fecha as fecha, hora as hora, edificio as edificio, edificios.descripcion as descripcion, actividad as actividad FROM historiallogueo INNER JOIN edificios ON edificio = edificios.id WHERE fecha BETWEEN ? AND ? AND username = ?'
+    let consultaSQL = 'SELECT username as username, fecha as fecha, hora as hora, edificio as edificio, edificios.descripcion as descripcion, actividad as actividad FROM historiallogueo INNER JOIN edificios ON edificio = edificios.id WHERE  username = ?';
 
-    const detalle = await db.query(consultaSQL, [req.body.fechaDesde, req.body.fechaHasta, req.body.usuario]);
+    if (req.body.radioFechas == 'Hoy') {
+        consultaSQL = consultaSQL + ' AND fecha = "'+ ahora.ahora() + '"'
+    } else {
+        if (req.body.radioFechas == 'entreFechas') {
+            consultaSQL = consultaSQL + ' AND fecha BETWEEN "'+ req.body.fechaDesde+'" AND "'+req.body.fechaHasta+'"';
+        }
+    }
+
+    const detalle = await db.query(consultaSQL, [req.body.usuario]);
 
     console.log(detalle);
 

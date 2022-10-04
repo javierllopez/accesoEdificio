@@ -1,0 +1,90 @@
+<div class="container-sm p-6">
+    <h1>Consultar mensajes</h1>
+    <form action="/consultarMensajesEnviados" method="post">
+        <div class="class row my-1">
+            <div class="class col-1">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" value="Hoy" id="radioFechasHoy" name="radioFechas"
+                        checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Hoy
+                    </label>
+                </div>
+            </div>
+            <div class="class col-1">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" value="Todos" id="radioFechaTodos" name="radioFechas">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Todos
+                    </label>
+                </div>
+            </div>
+            <div class="class col-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" value="entreFechas" id="radioFechasEntreFechas"
+                        name="radioFechas">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Consultar entre fechas
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row my-1">
+            <div class="col">
+
+                <div class="mb-3">
+                    <label for="desdeFecha" class="form-label">Desde Fecha</label>
+                    <input type="date" class="form-control" id="desdeFecha" name="desdeFecha">
+                    <div id="ayudaDesdeFecha" class="form-text">Ingrese fecha a consultar</div>
+                </div>
+
+            </div>
+
+            <div class="col">
+                <div class="mb-3">
+                    <label for="hastaFecha" class="form-label">Hasta Fecha</label>
+                    <input type="date" class="form-control" id="hastaFecha" name="hastaFecha">
+                    <div id="ayudaHastaFecha" class="form-text">Ingrese fecha a consultar</div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="class row mt-3">
+            <hr>
+        </div>
+
+        <div class="row my-1">
+
+            <div class="col-6">
+                <label for="destinatario" class="form-label">Destinatario</label>
+                <select class="form-select" aria-label="Default select example" name="destinatario">
+                    <option value="Todos">Todos</option>
+                    {{#each destinatarios}}
+                    <option value="{{destinatario}}">{{destinatario}}</option>
+                    {{/each}}
+                </select>
+                <div id="ayudaDestinatario" class="form-text">Seleccione el destinatario</div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <label for="estado" class="form-label">Estado</label>
+            <select class="form-select" aria-label="Default select example" name="estado">
+
+                <option value="Todos">Todos</option>
+                <option value="No Leído">No Leído</option>
+                <option value="Leido">Leido</option>
+
+            </select>
+            <div id="ayudaEstado" class="form-text">Consultar mensajes por estado</div>
+        </div>
+
+        <div class="d-grid mt-3 gap-2">
+            <button type="submit" class="btn btn-primary" onclick="prenderRuedita()">Consultar</button>
+        </div>
+        <div class="d-grid gap-2">
+            <a class="btn btn-primary my-2" href="/" onclick="prenderRuedita()">Volver</a>
+        </div>
+    </form>
+</div>

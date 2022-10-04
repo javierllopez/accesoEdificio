@@ -1,0 +1,56 @@
+<div class="container-sm text-center">
+    <h2>Detalle de mensajes enviados</h2>
+    <div class="row  border border-dark bg-primary text-white">
+        <div class="col">
+            <p class="container my-2">Destinatario</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">Asunto</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">Fecha</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">Hora</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">Estado</p>
+        </div>
+        <div class="col">
+            <p class="container my-2">Acción</p>
+        </div>
+
+    </div>
+    {{#if resultado}}
+    {{#each resultado}}
+    <div class="row  border border-dark bg-white text-dark">
+        <div class="col">
+            <p class="container my-1">{{destinatario}}</p>
+        </div>
+        <div class="col">
+            <p class="container my-1">{{asunto}}</p>
+        </div>
+        <div class="col">
+            <p class="container my-1">{{fechaNormalizada fecha}}</p>
+        </div>
+        <div class="col">
+            <p class="container my-1">{{hora}}</p>
+        </div>
+        <div class="col">
+            <p class="container my-1">{{estado}}</p>
+        </div>
+        <div class="col">
+            <a type="button" class="btn my-2 btn-primary btn-sm" aria-label="Left Align" href="/leerMensajeEnviado/{{id}}" onclick="prenderRuedita()">
+                Leer
+            </a>
+        </div>
+    </div>
+    {{/each}}
+
+    {{/if}}
+
+
+    <a type="button" class="btn my-5 btn-primary" href="/" onclick="prenderRuedita()">
+        Volver
+    </a>
+</div>

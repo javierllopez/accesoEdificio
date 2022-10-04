@@ -1,20 +1,18 @@
 const express = require('express');
 const router = express.Router();
+const alertaMensajes = require('../lib/alertaMensajes');
 
-router.get('/', (req, res) => {
-    if (req.user == (undefined || null))
-    {
-        res.render('index',{sinUsuario: true});
+router.get('/', async (req, res, next) => {
+    if (req.user == (undefined || null)) {
+        return res.render('index', { sinUsuario: true });
     }
-    else 
-    {
-        if (req.user.acceso == 1)
-        {
-            res.render('index',{usuarioAcceso1: true, usuarioLogueado: req.user.username});
+    else {
+        await alertaMensajes(req, res, next);
+        if (req.user.acceso == 1) {
+            return res.render('index', { usuarioAcceso1: true, usuarioLogueado: req.user.username });
         }
-        if (req.user.acceso == 2)
-        {
-            res.render('index',{usuarioAcceso2: true, usuarioLogueado: req.user.username});
+        if (req.user.acceso == 2) {
+           return res.render('index', { usuarioAcceso2: true, usuarioLogueado: req.user.username });
         }
 
     }
