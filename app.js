@@ -9,6 +9,7 @@ const MySQLStore = require("express-mysql-session");
 const passport = require("passport");
 const {database} = require('./claves');
 const {databaseHeroku} = require('./clavesHeroku');
+const ahora = require('./lib/ahora');
 
 
 const app = express()
