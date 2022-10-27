@@ -10,8 +10,8 @@ router.get('/', logueado, async (req, res) => {
   const registro = {
     username: req.user.username,
     edificio: req.user.edificio,
-    fecha: ahora.ahora(),
-    hora: new Date().toLocaleTimeString('es-AR'),
+    fecha: ahora.fechaActual(),
+    hora: ahora.horaActual(),
     actividad: 'Logout'
   }
   await db.query('INSERT INTO historiallogueo SET ?', [registro]);

@@ -14,7 +14,6 @@ router.get('/:id',logueado, async (req,res,next)=> {
 
 router.get('/mensajeLeido/:id',logueado,async(req,res,next)=> {
     miId = req.params;
-    console.log('Entró en mensaje leido');
     await db.query('UPDATE mensajes SET ? WHERE id = ?',[{estado: 'Leído'},miId.id]);
 
     return res.redirect('/');

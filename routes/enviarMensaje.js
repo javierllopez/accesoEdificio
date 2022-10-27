@@ -37,8 +37,8 @@ router.post('/',logueado,async (req,res,next)=> {
         destinatario: req.body.destinatario,
         asunto: req.body.asuntoMensaje,
         mensaje: req.body.mensaje,
-        fecha: ahora.ahora(),
-        hora: new Date().toLocaleTimeString('es-AR'),
+        fecha: ahora.fechaActual(),
+        hora: ahora.horaActual(),
         estado: 'No Leído'
     }
 

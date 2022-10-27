@@ -23,8 +23,8 @@ router.get('/:id', accesoNivel2,async (req,res,next)=> {
         idPersona: registro[0].idPersona,
         apellido: registro[0].apellido,
         nombre: registro[0].nombres,
-        fecha: ahora.ahora(),
-        hora: new Date().toLocaleTimeString(),
+        fecha: ahora.fechaActual(),
+        hora: ahora.horaActual(),
         actividad: 'Salida'
     }
     console.log(registro);
