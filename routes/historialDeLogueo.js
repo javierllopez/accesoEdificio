@@ -17,7 +17,7 @@ router.get('/', accesoNivel1, async (req, res, next) => {
 router.post('/', async (req, res, next) => {
 
 
-    let consultaSQL = 'SELECT username as username, fecha as fecha, hora as hora, edificio as edificio, edificios.descripcion as descripcion, actividad as actividad FROM historiallogueo INNER JOIN edificios ON edificio = edificios.id WHERE  username = ? ORDER BY fecha DESC';
+    let consultaSQL = 'SELECT username as username, fecha as fecha, hora as hora, edificio as edificio, edificios.descripcion as descripcion, actividad as actividad FROM historiallogueo  ORDER BY fecha DESC INNER JOIN edificios ON edificio = edificios.id WHERE  username = ?';
 
     if (req.body.radioFechas == 'Hoy') {
         consultaSQL = consultaSQL + ' AND fecha = "'+ ahora.fechaActual() + '"'
