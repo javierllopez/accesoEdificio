@@ -27,7 +27,7 @@ router.post('/', async (req, res, next) => {
         }
     }
 
-    consultaSQL = consultaSQL + ' ORDER BY fecha DESC'
+    consultaSQL = consultaSQL + ' ORDER BY fecha DESC, hora DESC'
     const detalle = await db.query(consultaSQL, [req.body.usuario]);
 
     console.log(detalle);
