@@ -60,7 +60,7 @@ router.post('/', logueado, async (req, res, next) => {
         consultaSQL = consultaSQL + ' AND estado = "' + req.body.estado + '"';
     }
 
-    console.log(consultaSQL);
+    consultaSQL = consultaSQL + 'ORDER BY fecha DESC, hora DESC';
 
     const resultado = await db.query(consultaSQL);
 
@@ -69,8 +69,7 @@ router.post('/', logueado, async (req, res, next) => {
             return ahora.convertirAFechaNormal(fecha);
         }
     }})
-  
-    res.redirect('/');
+
 
 });
 

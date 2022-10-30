@@ -27,7 +27,7 @@ router.post('/', logueado, async (req, res, next) => {
     //Valido fecha desde y hasta
 
     if (req.body.radioFechas == 'Hoy') {
-        consultaSQL = consultaSQL + ' AND fecha = "' + ahora.ahora() + '"';
+        consultaSQL = consultaSQL + ' AND fecha = "' + ahora.fechaActual() + '"';
     } else {
         if (req.body.radioFechas == 'entreFechas') {
 
@@ -48,6 +48,8 @@ router.post('/', logueado, async (req, res, next) => {
         }
     }
 
+  
+
     // Valido Destinatario
 
     if (req.body.destinatario != 'Todos') {
@@ -60,7 +62,7 @@ router.post('/', logueado, async (req, res, next) => {
         consultaSQL = consultaSQL + ' AND estado = "' + req.body.estado + '"';
     }
 
-    console.log(consultaSQL);
+    consultaSQL = consultaSQL + 'ORDER BY fecha DESC, hora DESC'; 
 
     const resultado = await db.query(consultaSQL);
 
@@ -70,9 +72,6 @@ router.post('/', logueado, async (req, res, next) => {
         }
     }})
 
-
-    //req.flash('mensaje','Mensaje enviado');   
-    res.redirect('/');
 
 });
 
