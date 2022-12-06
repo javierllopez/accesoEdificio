@@ -40,7 +40,8 @@ router.post('/', async (req, res, next) => {
                 return ahora.convertirAFechaNormal(miFecha);
             },
             horaNormalizada: (miHora) => {
-                let resultado = new Intl.DateTimeFormat(undefined,{timeStyle:"short"}).format(miHora);
+                let resultado = miHora // new Intl.DateTimeFormat(undefined,{timeStyle:"short"}).format(new Date(miHora));
+                console.log(miHora);
                 return resultado;
             }
         }
