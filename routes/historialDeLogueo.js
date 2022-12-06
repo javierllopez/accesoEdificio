@@ -31,10 +31,17 @@ router.post('/', async (req, res, next) => {
     const detalle = await db.query(consultaSQL, [req.body.usuario]);
 
     return res.render('detalleHistorialDeLogueo', {
-        fechaDesde: req.body.fechaDesde, fechaHasta: req.body.fechaHasta, username: req.body.usuario, detalle: detalle,
+        fechaDesde: req.body.fechaDesde, 
+        fechaHasta: req.body.fechaHasta, 
+        username: req.body.usuario, 
+        detalle: detalle,
         helpers: {
             fechaNormalizada: (miFecha) => {
                 return ahora.convertirAFechaNormal(miFecha);
+            },
+            horaNormalizada: (miHora) => {
+                let resultado = new Intl.DateTimeFormat(undefined,{timeStyle:"short"}).format(miHora);
+                return resultado;
             }
         }
     });
