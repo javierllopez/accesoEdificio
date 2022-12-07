@@ -69,6 +69,10 @@ router.post('/', logueado, async (req, res, next) => {
     return res.render('detalleMensajesEnviados',{resultado: resultado, helpers: {
         fechaNormalizada: (fecha)=> {
             return ahora.convertirAFechaNormal(fecha);
+        },
+        LeidoEl: (estado, fecha, hora) => {
+            if (estado == 'Leído') return 'el '+ahora.convertirAFechaNormal(fecha)+' a las '+hora;
+            else return "";
         }
     }})
 
