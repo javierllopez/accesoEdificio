@@ -1,5 +1,5 @@
 <div class="container-sm p-6">
-    <h1>Editando a usuario {{usuario.username}} {{edificioUsuario.idEdificio}} </h1>
+    <h1>Editando a usuario {{usuario.username}}</h1>
 
     <form action="/editarUsuario/{{usuario.username}}" method="post">
         <div class="mb-3">
@@ -24,7 +24,7 @@
         </div>
         <div class="mb-3">
             <label for="DNIUsuario" class="form-label">D.N.I.</label>
-            <input type="number" class="form-control" id="DNIUsuario" name="DNIUsuario" value="{{usuario.id}}">
+            <input type="number" class="form-control" id="DNIUsuario" name="DNIUsuario" value="{{usuario.id}}" readonly>
             <div id="DNIUsuarioAyuda" class="form-text">Ingrese el D.N.I. del usuario</div>
         </div>
 
